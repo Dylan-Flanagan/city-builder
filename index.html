@@ -1,39 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <!-- metadata -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!-- title and favicon -->
+        <title>Unbiased City Builder</title>
+        <link rel="icon" type="image/x-icon" href="assets/skyline.png" />
 
-    <!-- title and favicon -->
-    <title>Web App</title>
-    <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
+        <!-- js -->
+        <script type="module" src="app.js"></script>
 
-    <!-- js -->
-    <script type="module" src="app.js"></script>
+        <!-- fonts -->
+        <!-- see https://fonts.google.com/ -->
 
-    <!-- fonts -->
-    <!-- see https://fonts.google.com/ -->
+        <!-- css -->
+        <link rel="stylesheet" href="styles/reset.css" />
+        <link rel="stylesheet" href="styles/global.css" />
+        <!-- add link for page specific css -->
+    </head>
 
-    <!-- css -->
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/global.css" />
-    <!-- add link for page specific css -->
+    <body>
+        <header>
+            <img class="logo" src="/assets/skyline.png" alt="logo" />
+            <h1>Unbiased City Builder</h1>
+        </header>
 
-</head>
-
-<body>
-    <header>
-        <img class="logo" src="assets/html_css_js.png" alt="logo">
-        <h1>Web App</h1>
-    </header>
-
-    <main>
-
-    </main>
-
-</body>
-
+        <main>
+            <section class="builder">
+                <label>Where am I?<input id="name-input" /></label>
+                <label
+                    >Climate
+                    <select id="aesthetic-select">
+                        <option value="ugly">Ugly</option>
+                        <option value="pretty">Pretty</option>
+                        <option value="imaginary">Imaginary</option>
+                    </select>
+                </label>
+                <label
+                    >Vibe
+                    <select id="vibe-select">
+                        <option value="gothic">Gothic</option>
+                        <option value="boxes">A City of Boxes</option>
+                        <option value="frank">Everything Was Made by Frank Lloyd Wright</option>
+                    </select>
+                </label>
+                <label>
+                    Where Would You Live?
+                    <div class="add-place">
+                        <input id="place-input" />
+                        <button id="add-button">+</button>
+                    </div>
+                </label>
+            </section>
+            <article id="builder-article" class="ugly boxes">
+                <h1>Well, Here it Is: <span id="name-display">Oblivion</span>...</h1>
+                <div class="images">
+                    <img id="boxes" src="/assets/boxes.jpeg" alt="boxes" />
+                    <img id="ugly" src="/assets/ugly.jpeg" alt="ugly" />
+                </div>
+                <ul id="attraction-list"></ul>
+            </article>
+        </main>
+    </body>
 </html>

@@ -19,20 +19,21 @@
         <!-- css -->
         <link rel="stylesheet" href="styles/reset.css" />
         <link rel="stylesheet" href="styles/global.css" />
+        <link rel="stylesheet" href="/styles/citybuilder.css" />
         <!-- add link for page specific css -->
     </head>
 
     <body>
         <header>
             <img class="logo" src="/assets/skyline.png" alt="logo" />
-            <h1>Unbiased City Builder</h1>
+            <h1 id="header">Unbiased City Builder</h1>
         </header>
 
         <main>
-            <section class="builder">
+            <section id="designer" class="builder">
                 <label>Where am I?<input id="name-input" /></label>
                 <label
-                    >Climate
+                    >Aesthetic
                     <select id="aesthetic-select">
                         <option value="ugly">Ugly</option>
                         <option value="pretty">Pretty</option>

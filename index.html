@@ -1,39 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!--added comment for netlify preview-->
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <!-- metadata -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!-- title and favicon -->
+        <title>Unbiased City Builder</title>
+        <link rel="icon" type="image/x-icon" href="assets/skyline.png" />
 
-    <!-- title and favicon -->
-    <title>Web App</title>
-    <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
+        <!-- js -->
+        <script type="module" src="app.js"></script>
 
-    <!-- js -->
-    <script type="module" src="app.js"></script>
+        <!-- fonts -->
+        <!-- see https://fonts.google.com/ -->
 
-    <!-- fonts -->
-    <!-- see https://fonts.google.com/ -->
+        <!-- css -->
+        <link rel="stylesheet" href="styles/reset.css" />
+        <link rel="stylesheet" href="styles/global.css" />
+        <link rel="stylesheet" href="/styles/citybuilder.css" />
+        <!-- add link for page specific css -->
+    </head>
 
-    <!-- css -->
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/global.css" />
-    <!-- add link for page specific css -->
+    <body>
+        <header>
+            <img class="logo" src="/assets/skyline.png" alt="logo" />
+            <h1 id="header">Unbiased City Builder</h1>
+        </header>
 
-</head>
-
-<body>
-    <header>
-        <img class="logo" src="assets/html_css_js.png" alt="logo">
-        <h1>Web App</h1>
-    </header>
-
-    <main>
-
-    </main>
-
-</body>
-
+        <main>
+            <section id="designer" class="builder">
+                <label>Where am I?<input id="name-input" value="Purgatory" /></label>
+                <label
+                    >Climate
+                    <select id="climate-select">
+                        <option value="ugly">Ugly</option>
+                        <option value="pretty">Pretty</option>
+                        <option value="imaginary">Imaginary</option>
+                    </select>
+                </label>
+                <label
+                    >Architecture
+                    <select id="architecture-select">
+                        <option value="gothic">Gothic</option>
+                        <option value="boxes">A City of Boxes</option>
+                        <option value="frank">Everything Was Made by Frank Lloyd Wright</option>
+                    </select>
+                </label>
+                <label>
+                    Where Would You Live?
+                    <div class="add-place">
+                        <input id="attraction-input" />
+                        <button id="add-button">+</button>
+                    </div>
+                </label>
+            </section>
+            <article id="builder-article" class="ugly boxes">
+                <h1>Well, Here it Is: <span id="name-display">Oblivion</span>...</h1>
+                <div class="images">
+                    <img id="architecture-display" src="/assets/boxes.png" alt="boxes" />
+                    <img id="climate-display" src="/assets/ugly.png" alt="ugly" />
+                </div>
+                <label>City Attractions</label>
+                <ul id="attraction-list"></ul>
+            </article>
+        </main>
+    </body>
 </html>

@@ -8,7 +8,7 @@ const nameDisplay = document.getElementById('name-display');
 const climateImage = document.getElementById('climate-display');
 const architectureImage = document.getElementById('architecture-display');
 const builderArticle = document.getElementById('builder-article');
-const placeInput = document.getElementById('place-input');
+const attractionInput = document.getElementById('attraction-input');
 const addButton = document.getElementById('add-button');
 const attractionList = document.getElementById('attraction-list');
 
@@ -23,7 +23,7 @@ const city = {
 /* Events */
 nameInput.addEventListener('input', () => {
     city.name = nameInput.value;
-    displayPlaces();
+    displayAttractions();
 });
 
 climateSelect.addEventListener('change', () => {
@@ -37,6 +37,7 @@ architectureSelect.addEventListener('change', () => {
 });
 
 /* Display Functions */
+
 function displayControls() {
     nameInput.value = city.name;
     climateSelect.value = city.climate;
@@ -53,16 +54,24 @@ function displayCity() {
     architectureImage.alt = city.architecture;
 }
 
-function displayPlaces() {
-    nameDisplay.textContent = city.name;
-    // clear the list
-    // attractionList.innerHTML = '';
-    // for (const attraction of city.attractions) {
-    //     const li = document.createElement('li');
-    //     li.textContent = attraction;
-    //     attractionList.append(li);
-    // }
-}
 // (don't forget to call any display functions you want to run on page load!)
+// clear the list
+
+function displayAttractions() {
+    attractionList.innerHTML = '';
+
+    for (const attraction of city.attractions) {
+        const li = document.createElement('li');
+        li.textContent = attraction;
+        attractionList.append(li);
+    }
+}
+
+addButton.addEventListener('click', () => {
+    const attraction = attractionInput.value;
+    city.attractions.push(attraction);
+    displayAttractions();
+    attractionInput.value = '';
+});
 displayControls();
 displayCity();

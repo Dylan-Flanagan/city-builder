@@ -37,15 +37,16 @@ button {
     padding: 5px 16px;
     text-decoration: none;
     text-shadow: 0px 1px 0px #e1e2ed;
-    &:hover {
-        background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
-        background-color: #bab1ba;
-    }
-    &:active {
-        position: relative;
-        top: 1px;
-    }
 }
+button::hover {
+    background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+    background-color: #bab1ba;
+}
+:active {
+    position: relative;
+    top: 1px;
+}
+
 #attraction-list {
     display: flex;
     flex-wrap: wrap;
